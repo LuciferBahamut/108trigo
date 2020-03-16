@@ -18,17 +18,21 @@ typedef struct matrix_t
 {
     double **matrix;
     double **res_matrix;
+    int rows;
+    int mode;
 } matrix_t;
 
-void trigo(int ac, char **av);
-
-int display_help(void);
-
-int error_handling(int ac, char **av);
-int my_strcmp(char const *str1, char const *str2);
-void write_error(char *str);
+void trigo(matrix_t *m);
+void compute_sinh(matrix_t *m);
+void compute_cosh(matrix_t *m);
 
 void fill_matrices(matrix_t *m, int ac, char **av);
+void display_matrix(matrix_t *m);
+
+int error_handling(int ac, char **av, matrix_t *m);
+int my_strcmp(char const *str1, char const *str2);
+void write_error(char *str);
+int display_help(void);
 
 #define SUCCESS 0
 #define ERROR 84

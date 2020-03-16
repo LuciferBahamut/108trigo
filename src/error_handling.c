@@ -8,7 +8,7 @@
 #include "trigo.h"
 #include "error_message.h"
 
-int check_first_arg(char *arg)
+int check_first_arg(char *arg, matrix_t *m)
 {
     char *commands[5];
 
@@ -18,15 +18,17 @@ int check_first_arg(char *arg)
     commands[3] = "COSH";
     commands[4] = "SINH";
     for (int i = 0; i != 5; i++)
-        if (my_strcmp(arg, commands[i]))
+        if (my_strcmp(arg, commands[i])) {
+            m->mode = i;
             return (FALSE);
+        }
     write_error(STR_ERROR_FIRARG);
     return (TRUE);
 }
 
-int error_handling(int ac, char **av)
+int error_handling(int ac, char **av, matrix_t *m)
 {
-    if (check_first_arg(av[1]))
+    if (check_first_arg(av[1], m))
         return (TRUE);
     for (int i = 2; i != ac; i++) {
         for (int j = 0; av[i][j] != '\0'; j++) {
