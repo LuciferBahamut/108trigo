@@ -6,6 +6,7 @@
 */
 
 #include "trigo.h"
+#include "error_message.h"
 
 void write_error(char *str)
 {

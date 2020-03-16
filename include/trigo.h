@@ -14,8 +14,13 @@
 #include <unistd.h>
 #include <math.h>
 
+int error_handling(int ac, char **av);
+int my_strcmp(char const *str1, char const *str2);
 void write_error(char *str);
 
-#define STR_HELP " (see with -h)\n"
+#define SUCCESS 0
+#define ERROR 84
+#define TRUE 1
+#define FALSE 0
 
 #endif

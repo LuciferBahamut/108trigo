@@ -8,6 +8,8 @@
 NAME	=	108trigo
 
 SRC	=	src/main.c		\
+		src/error_handling.c	\
+		src/my_strcmp.c		\
 		src/write_error.c
 
 OBJ	=	$(SRC:.c=.o)
