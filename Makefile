@@ -14,7 +14,8 @@ SRC	=	src/main.c		\
 		src/error_handling.c	\
 		src/fill_matrices.c	\
 		src/my_strcmp.c		\
-		src/write_error.c
+		src/write_error.c	\
+		src/calc_fact.c
 
 
 OBJ	=	$(SRC:.c=.o)

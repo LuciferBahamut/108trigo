@@ -11,12 +11,23 @@ void display_matrix(matrix_t *m)
 {
     for (int i = 0; i != m->rows; i++)
         for (int j = 0; j != m->rows; j++) {
-            if (j + 1 == m->rows) {
-                printf("%.2f\n", m->res_matrix[i][j]);
-                break;
-            }
-            printf("%.2f\t", m->res_matrix[i][j]);
+            if (j == m->rows - 1)
+                printf("%.2f\n", m->id_matrix[i][j]);
+            else
+                printf("%.2f\t", m->id_matrix[i][j]);
         }
+}
+
+void fill_id_matrix(matrix_t *m)
+{
+    m->id_matrix = malloc(sizeof(double *) * m->rows);
+    for (int i = 0; i != m->rows; i++) {
+        m->id_matrix[i] = malloc(sizeof(double) * m->rows);
+        for (int j = 0; j != m->rows; j++)
+            m->id_matrix[i][j] = 0;
+    }
+    for (int i = 0, j = 0; i != m->rows; i++, j++)
+        m->id_matrix[i][j] = 1;
 }
 
 void fill_matrices(matrix_t *m, int ac, char **av)
@@ -26,6 +37,7 @@ void fill_matrices(matrix_t *m, int ac, char **av)
     m->rows = ceil(sqrt(ac-2));
     m->matrix = malloc(sizeof(double *) * m->rows);
     m->res_matrix = malloc(sizeof(double *) * m->rows);
+    fill_id_matrix(m);
     for (int i = 0; i != m->rows; i++) {
         m->matrix[i] = malloc(sizeof(double) * m->rows);
         m->res_matrix[i] = malloc(sizeof(double) * m->rows);

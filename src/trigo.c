@@ -17,6 +17,23 @@ void compute_cos(matrix_t *m)
 
 void compute_exp(matrix_t *m)
 {
+    double stock;
+    double stock1;
+
+    for (int i = 0; i != m->rows; i++)
+        for (int j = 0; j!= m->rows; j++)
+            m->id_matrix[i][j] += m->res_matrix[i][j];
+    for (int k = 2; k != 171; k++) {
+        for (int i = 0; i != m->rows; i++)
+            for (int j = 0; j != m->rows; j++) {
+                stock = calc_fact(k);
+                stock1 = 
+                m->res_matrix[i][j] = stock1 / stock;
+                m->id_matrix[i][j] += m->res_matrix[i][j];
+            }
+        display_matrix(m);
+        printf("\n");
+    }
 }
 
 void trigo(matrix_t *m)
