@@ -7,6 +7,13 @@
 
 #include "trigo.h"
 
+void replenish_square_matrix(matrix_t *m)
+{
+    for (int i = 0; i != m->rows; i++)
+        for (int j = 0; j != m->rows; j++)
+            m->square_matrix[i][j] = m->res_matrix[i][j];
+}
+
 void display_matrix(matrix_t *m)
 {
     for (int i = 0; i != m->rows; i++)
@@ -28,6 +35,16 @@ void fill_id_matrix(matrix_t *m)
     }
     for (int i = 0, j = 0; i != m->rows; i++, j++)
         m->id_matrix[i][j] = 1;
+}
+
+void fill_square_matrix(matrix_t *m)
+{
+    m->square_matrix = malloc(sizeof(double *) * m->rows);
+    for (int i = 0; i != m->rows; i++) {
+        m->square_matrix[i] = malloc(sizeof(double) * m->rows);
+        for (int j = 0; j != m->rows; j++)
+            m->square_matrix[i][j] = m->matrix[i][j];
+    }
 }
 
 void fill_matrices(matrix_t *m, int ac, char **av)
@@ -52,4 +69,5 @@ void fill_matrices(matrix_t *m, int ac, char **av)
             }
         }
     }
+    fill_square_matrix(m);
 }

@@ -19,6 +19,7 @@ typedef struct matrix_t
     double **matrix;
     double **res_matrix;
     double **id_matrix;
+    double **square_matrix;
     int rows;
     int mode;
 } matrix_t;
@@ -26,9 +27,12 @@ typedef struct matrix_t
 void trigo(matrix_t *m);
 void compute_sinh(matrix_t *m);
 void compute_cosh(matrix_t *m);
+
 double calc_fact(double nb);
+double compute_matrix(matrix_t *m, int i, int j);
 
 void fill_matrices(matrix_t *m, int ac, char **av);
+void replenish_square_matrix(matrix_t *m);
 void display_matrix(matrix_t *m);
 
 int error_handling(int ac, char **av, matrix_t *m);

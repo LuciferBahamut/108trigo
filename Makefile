@@ -8,14 +8,14 @@
 NAME	=	108trigo
 
 SRC	=	src/main.c		\
+		src/compute.c		\
 		src/trigo.c		\
 		src/hyperbolic.c	\
 		src/help_display.c	\
 		src/error_handling.c	\
 		src/fill_matrices.c	\
 		src/my_strcmp.c		\
-		src/write_error.c	\
-		src/calc_fact.c
+		src/write_error.c
 
 
 OBJ	=	$(SRC:.c=.o)
