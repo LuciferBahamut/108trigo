@@ -7,6 +7,16 @@
 
 #include "trigo.h"
 
+double compute_matrix_bis(matrix_t *m, int i, int j)
+{
+    double res = 0;
+
+    res = compute_matrix(m, i, j);
+    replenish_square_matrix(m);
+    res = compute_matrix(m, i, j);
+    return (res);
+}
+
 double compute_matrix(matrix_t *m, int i, int j)
 {
     double factor = 0;

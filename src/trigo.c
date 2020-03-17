@@ -23,7 +23,7 @@ void compute_exp(matrix_t *m)
     for (int i = 0; i != m->rows; i++)
         for (int j = 0; j != m->rows; j++)
             m->id_matrix[i][j] += m->res_matrix[i][j];
-    for (int k = 2; k != 171; k++) {
+    for (int k = 2; k != 150; k++) {
         for (int i = 0; i != m->rows; i++)
             for (int j = 0; j != m->rows; j++) {
                 stock = calc_fact(k);
