@@ -15,7 +15,7 @@ void compute_sinh(matrix_t *m)
     for (int i = 0; i != m->rows; i++)
         for (int j = 0; j != m->rows; j++)
             m->id_matrix[i][j] = m->res_matrix[i][j];
-    for (int k = 3; k != 150; k = k + 2) {
+    for (int k = 3; k != 151; k = k + 2) {
         for (int i = 0; i != m->rows; i++)
             for (int j = 0; j != m->rows; j++) {
                 stock = calc_fact(k);
@@ -33,9 +33,6 @@ void compute_cosh(matrix_t *m)
     double stock = 0;
     double stock1 = 0;
 
-    for (int i = 0; i != m->rows; i++)
-        for (int j = 0; j != m->rows; j++)
-            m->id_matrix[i][j] += m->res_matrix[i][j];
     for (int k = 2; k != 150; k = k + 2) {
         for (int i = 0; i != m->rows; i++)
             for (int j = 0; j != m->rows; j++) {

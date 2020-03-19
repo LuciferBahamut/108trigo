@@ -13,6 +13,8 @@ void free_struct(matrix_t *m)
     for (int i = 0; i != m->rows; i++) {
         free(m->matrix[i]);
         free(m->res_matrix[i]);
+        free(m->id_matrix[i]);
+        free(m->square_matrix[i]);
     }
     free(m);
 }
@@ -28,8 +30,10 @@ int main(int ac, char **av)
         return (ERROR);
     }
     fill_matrices(m, ac, av);
-    if (error_handling(ac, av, m))
+    if (error_handling(ac, av, m)) {
+        free_struct(m);
         return (ERROR);
+    }
     trigo(m);
     free_struct(m);
     return (SUCCESS);
