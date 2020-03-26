@@ -8,6 +8,15 @@
 #include "trigo.h"
 #include "error_message.h"
 
+int check_square_number(int ac)
+{
+    for (int i = 0; i != ac; i++)
+        if ((i * i) ==(ac - 2))
+            return (FALSE);
+    write_error(STR_ERROR_SQUARE);
+    return (TRUE);
+}
+
 int check_first_arg(char *arg, matrix_t *m)
 {
     char *commands[5];
@@ -29,6 +38,8 @@ int check_first_arg(char *arg, matrix_t *m)
 int error_handling(int ac, char **av, matrix_t *m)
 {
     if (check_first_arg(av[1], m))
+        return (TRUE);
+    if (check_square_number(ac))
         return (TRUE);
     for (int i = 2; i != ac; i++) {
         for (int j = 0; av[i][j] != '\0'; j++) {

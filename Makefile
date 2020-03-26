@@ -9,6 +9,7 @@ NAME	=	108trigo
 
 SRC	=	src/main.c		\
 		src/compute.c		\
+		src/calc_matrix.c	\
 		src/trigo.c		\
 		src/hyperbolic.c	\
 		src/help_display.c	\

@@ -31,6 +31,8 @@ void compute_cosh(matrix_t *m);
 double calc_fact(double nb);
 double compute_matrix(matrix_t *m, int i, int j);
 double compute_matrix_bis(matrix_t *m, int i, int j);
+void compute_square_matrix(matrix_t *m);
+void divide_res_matrix(matrix_t *m, double stock, int u);
 
 void fill_matrices(matrix_t *m, int ac, char **av);
 void replenish_square_matrix(matrix_t *m);
