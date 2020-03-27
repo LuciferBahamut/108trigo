@@ -37,10 +37,10 @@ void compute_cos(matrix_t *m)
     double stock1 = 0;
 
     for (int k = 2, u = 0; k != 150; k = k + 2, u++) {
-//        stock = calc_fact(k);
-//        compute_square_matrix(m);
-//        divide_res_matrix(m, stock, u);
-        for (int i = 0; i != m->rows; i++)
+        stock = calc_fact(k);
+        compute_square_matrix(m);
+        divide_res_matrix(m, stock, u);
+/*        for (int i = 0; i != m->rows; i++)
             for (int j = 0; j != m->rows; j++) {
                 stock = calc_fact(k);
                 m->res_matrix[i][j] = compute_matrix_bis(m, i, j);
@@ -50,9 +50,8 @@ void compute_cos(matrix_t *m)
                 else
                     m->id_matrix[i][j] += stock1;
             }
+*/
         replenish_square_matrix(m);
-        display_matrix(m);
-        printf("\n");
     }
     display_matrix(m);
 }

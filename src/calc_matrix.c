@@ -14,10 +14,10 @@ void divide_res_matrix(matrix_t *m, double stock, int u)
     for (int i = 0; i != m->rows; i++)
         for (int j = 0; j != m->rows; j++) {
             stock1 = m->res_matrix[i][j] / stock;
-            if (u % 2 == 0)
-                m->id_matrix[i][j] = m->id_matrix[i][j] - stock1;
-            else
+            if (u % 2)
                 m->id_matrix[i][j] = m->id_matrix[i][j] + stock1;
+            else
+                m->id_matrix[i][j] = m->id_matrix[i][j] - stock1;
         }
 }
 
