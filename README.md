@@ -1,5 +1,5 @@
 # 108trigo
-### {EPITECH} -- First year -- Semester 2 -- seventh maths project
+### {EPITECH} -- First year -- Semester 2 -- eighth maths project
 
 2nd semester Maths unit : Grade B
 
